@@ -1,0 +1,108 @@
+EESchema Schematic File Version 4
+LIBS:SBIO3-cache
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 6 7
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text GLabel 2750 3800 0    50   Input ~ 0
+RESET
+$Comp
+L power:GND #PWR0179
+U 1 1 5F0AE11F
+P 3250 4200
+F 0 "#PWR0179" H 3250 3950 50  0001 C CNN
+F 1 "GND" V 3255 4072 50  0000 R CNN
+F 2 "" H 3250 4200 50  0001 C CNN
+F 3 "" H 3250 4200 50  0001 C CNN
+	1    3250 4200
+	0    -1   -1   0   
+$EndComp
+Text GLabel 2750 4000 0    50   Input ~ 0
+Stop
+Text GLabel 2750 3900 0    50   Input ~ 0
+NOTAUS
+Text GLabel 2750 4100 0    50   Input ~ 0
+Start
+Text GLabel 3250 3800 2    50   Input ~ 0
+Dbg1
+Text GLabel 2750 4200 0    50   Input ~ 0
+Dbg2
+Text GLabel 3250 3900 2    50   Input ~ 0
+SR_Latch
+Text GLabel 3250 4000 2    50   Input ~ 0
+SR_Daten
+Text GLabel 3250 4100 2    50   Input ~ 0
+SR_Takt
+$Comp
+L Connector_Generic:Conn_02x05_Top_Bottom J11
+U 1 1 5F0AFC40
+P 2950 4000
+F 0 "J11" H 3000 4417 50  0000 C CNN
+F 1 "Frontpannel" H 3000 4326 50  0000 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x05_P2.54mm_Vertical" H 2950 4000 50  0001 C CNN
+F 3 "~" H 2950 4000 50  0001 C CNN
+	1    2950 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x04 J12
+U 1 1 5F0B3DD5
+P 4600 3950
+F 0 "J12" H 4680 3942 50  0000 L CNN
+F 1 "Conn_01x04" H 4680 3851 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical" H 4600 3950 50  0001 C CNN
+F 3 "~" H 4600 3950 50  0001 C CNN
+	1    4600 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0180
+U 1 1 5F0B46EA
+P 4300 4250
+F 0 "#PWR0180" H 4300 4000 50  0001 C CNN
+F 1 "GND" H 4305 4077 50  0000 C CNN
+F 2 "" H 4300 4250 50  0001 C CNN
+F 3 "" H 4300 4250 50  0001 C CNN
+	1    4300 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0181
+U 1 1 5F0B4BCA
+P 4300 3750
+F 0 "#PWR0181" H 4300 3600 50  0001 C CNN
+F 1 "+5V" H 4315 3923 50  0000 C CNN
+F 2 "" H 4300 3750 50  0001 C CNN
+F 3 "" H 4300 3750 50  0001 C CNN
+	1    4300 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4400 3850 4300 3850
+Wire Wire Line
+	4300 3850 4300 3750
+Wire Wire Line
+	4400 3950 4300 3950
+Wire Wire Line
+	4300 3950 4300 3850
+Connection ~ 4300 3850
+Wire Wire Line
+	4400 4150 4300 4150
+Wire Wire Line
+	4300 4150 4300 4250
+Wire Wire Line
+	4400 4050 4300 4050
+Wire Wire Line
+	4300 4050 4300 4150
+Connection ~ 4300 4150
+$EndSCHEMATC

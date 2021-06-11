@@ -1,0 +1,295 @@
+EESchema Schematic File Version 4
+LIBS:230V-Relais-cache
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Privat-Schematic:Finder_55.34.9.012.0040 U1
+U 1 1 5F3930E3
+P 3900 3950
+F 0 "U1" H 4828 3971 50  0000 L CNN
+F 1 "Finder_55.34.9.012.0040" H 4828 3880 50  0000 L CNN
+F 2 "Conn_Lib:Finder-55.34.012.0040" H 3900 5050 50  0001 C CNN
+F 3 "" H 3900 5050 50  0001 C CNN
+	1    3900 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5F394680
+P 2600 3800
+F 0 "R1" H 2670 3846 50  0000 L CNN
+F 1 "R" H 2670 3755 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2530 3800 50  0001 C CNN
+F 3 "~" H 2600 3800 50  0001 C CNN
+	1    2600 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D2
+U 1 1 5F39567F
+P 2600 4150
+F 0 "D2" V 2639 4033 50  0000 R CNN
+F 1 "LED" V 2548 4033 50  0000 R CNN
+F 2 "LED_THT:LED_D3.0mm" H 2600 4150 50  0001 C CNN
+F 3 "~" H 2600 4150 50  0001 C CNN
+	1    2600 4150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Diode:1N4007 D1
+U 1 1 5F395910
+P 2100 4000
+F 0 "D1" V 2054 4079 50  0000 L CNN
+F 1 "1N4007" V 2145 4079 50  0000 L CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 2100 3825 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 2100 4000 50  0001 C CNN
+	1    2100 4000
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J2
+U 1 1 5F395D9A
+P 4300 5600
+F 0 "J2" V 4172 5680 50  0000 L CNN
+F 1 "230V-Pri" V 4263 5680 50  0000 L CNN
+F 2 "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_2-G-5,08_1x02_P5.08mm_Horizontal" H 4300 5600 50  0001 C CNN
+F 3 "~" H 4300 5600 50  0001 C CNN
+	1    4300 5600
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J3
+U 1 1 5F3963F0
+P 4400 3150
+F 0 "J3" V 4364 3230 50  0000 L CNN
+F 1 "230V-1" V 4273 3230 50  0000 L CNN
+F 2 "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_2-G-5,08_1x02_P5.08mm_Horizontal" H 4400 3150 50  0001 C CNN
+F 3 "~" H 4400 3150 50  0001 C CNN
+	1    4400 3150
+	0    1    -1   0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J4
+U 1 1 5F397549
+P 7650 3100
+F 0 "J4" V 7614 3180 50  0000 L CNN
+F 1 "230V-1" V 7523 3180 50  0000 L CNN
+F 2 "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_2-G-5,08_1x02_P5.08mm_Horizontal" H 7650 3100 50  0001 C CNN
+F 3 "~" H 7650 3100 50  0001 C CNN
+	1    7650 3100
+	0    1    -1   0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_02x03_Odd_Even J1
+U 1 1 5F398E2C
+P 2200 6200
+F 0 "J1" V 2204 6012 50  0000 R CNN
+F 1 "Conn_02x03_Odd_Even" V 2295 6012 50  0000 R CNN
+F 2 "Conn_Lib:Wanne_6Pol" H 2200 6200 50  0001 C CNN
+F 3 "~" H 2200 6200 50  0001 C CNN
+	1    2200 6200
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	3050 3650 3050 3550
+Wire Wire Line
+	3050 3550 2600 3550
+Wire Wire Line
+	2600 3550 2600 3650
+Wire Wire Line
+	2600 3950 2600 4000
+Wire Wire Line
+	3050 4300 3050 4400
+Wire Wire Line
+	3050 4400 2600 4400
+Wire Wire Line
+	2600 4400 2600 4300
+Wire Wire Line
+	2600 3550 2100 3550
+Wire Wire Line
+	2100 3550 2100 3850
+Connection ~ 2600 3550
+Wire Wire Line
+	2100 4150 2100 4400
+Wire Wire Line
+	2100 4400 2600 4400
+Connection ~ 2600 4400
+Wire Wire Line
+	2100 4400 2000 4400
+Wire Wire Line
+	2000 4400 2000 5900
+Wire Wire Line
+	2000 5900 2100 5900
+Wire Wire Line
+	2100 5900 2100 6000
+Connection ~ 2100 4400
+Wire Wire Line
+	2100 3550 1900 3550
+Wire Wire Line
+	1900 3550 1900 6600
+Wire Wire Line
+	1900 6600 2100 6600
+Wire Wire Line
+	2100 6600 2100 6500
+Connection ~ 2100 3550
+$Comp
+L Device:Fuse F1
+U 1 1 5F3A4113
+P 4200 4550
+F 0 "F1" H 4260 4596 50  0000 L CNN
+F 1 "Fuse" H 4260 4505 50  0000 L CNN
+F 2 "Fuse:Fuseholder_Cylinder-5x20mm_Schurter_0031_8201_Horizontal_Open" V 4130 4550 50  0001 C CNN
+F 3 "~" H 4200 4550 50  0001 C CNN
+	1    4200 4550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 4300 4200 4400
+$Comp
+L Privat-Schematic:Finder_55.34.9.012.0040 U2
+U 1 1 5F3AE316
+P 7950 3900
+F 0 "U2" H 8878 3921 50  0000 L CNN
+F 1 "Finder_55.34.9.012.0040" H 8878 3830 50  0000 L CNN
+F 2 "Conn_Lib:Finder-55.34.012.0040" H 7950 5000 50  0001 C CNN
+F 3 "" H 7950 5000 50  0001 C CNN
+	1    7950 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 5F3AE31C
+P 6650 3750
+F 0 "R2" H 6720 3796 50  0000 L CNN
+F 1 "R" H 6720 3705 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6580 3750 50  0001 C CNN
+F 3 "~" H 6650 3750 50  0001 C CNN
+	1    6650 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D4
+U 1 1 5F3AE322
+P 6650 4100
+F 0 "D4" V 6689 3983 50  0000 R CNN
+F 1 "LED" V 6598 3983 50  0000 R CNN
+F 2 "LED_THT:LED_D3.0mm" H 6650 4100 50  0001 C CNN
+F 3 "~" H 6650 4100 50  0001 C CNN
+	1    6650 4100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Diode:1N4007 D3
+U 1 1 5F3AE328
+P 6150 3950
+F 0 "D3" V 6104 4029 50  0000 L CNN
+F 1 "1N4007" V 6195 4029 50  0000 L CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 6150 3775 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 6150 3950 50  0001 C CNN
+	1    6150 3950
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7100 3600 7100 3500
+Wire Wire Line
+	7100 3500 6650 3500
+Wire Wire Line
+	6650 3500 6650 3600
+Wire Wire Line
+	6650 3900 6650 3950
+Wire Wire Line
+	7100 4250 7100 4350
+Wire Wire Line
+	7100 4350 6650 4350
+Wire Wire Line
+	6650 4350 6650 4250
+Wire Wire Line
+	6650 3500 6150 3500
+Wire Wire Line
+	6150 3500 6150 3800
+Connection ~ 6650 3500
+Wire Wire Line
+	6150 4100 6150 4350
+Wire Wire Line
+	6150 4350 6650 4350
+Connection ~ 6650 4350
+Wire Wire Line
+	6150 4350 6050 4350
+Connection ~ 6150 4350
+Wire Wire Line
+	6150 3500 5950 3500
+Connection ~ 6150 3500
+$Comp
+L Device:Fuse F2
+U 1 1 5F3AE341
+P 7850 4500
+F 0 "F2" H 7910 4546 50  0000 L CNN
+F 1 "Fuse" H 7910 4455 50  0000 L CNN
+F 2 "Fuse:Fuseholder_Cylinder-5x20mm_Schurter_0031_8201_Horizontal_Open" V 7780 4500 50  0001 C CNN
+F 3 "~" H 7850 4500 50  0001 C CNN
+	1    7850 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 6000 2300 5900
+Wire Wire Line
+	2300 5900 6050 5900
+Wire Wire Line
+	6050 4350 6050 5900
+Wire Wire Line
+	5950 3500 5950 6600
+Wire Wire Line
+	5950 6600 2300 6600
+Wire Wire Line
+	2300 6600 2300 6500
+Wire Wire Line
+	4300 5400 4300 4950
+Wire Wire Line
+	4300 4950 4600 4950
+Wire Wire Line
+	4600 4300 4600 4950
+Wire Wire Line
+	4200 4700 4200 4800
+Connection ~ 4200 4800
+Wire Wire Line
+	4200 4800 4200 5400
+Wire Wire Line
+	4600 4950 7450 4950
+Connection ~ 4600 4950
+Wire Wire Line
+	4700 3450 4700 3650
+Wire Wire Line
+	7550 3300 7550 3600
+Wire Wire Line
+	7650 3300 7650 3450
+Wire Wire Line
+	7650 3450 7950 3450
+Wire Wire Line
+	7950 3450 7950 3600
+Wire Wire Line
+	7850 4800 7850 4650
+Wire Wire Line
+	4200 4800 7850 4800
+Wire Wire Line
+	7850 4350 7850 4250
+Wire Wire Line
+	7450 4250 7450 4950
+Wire Wire Line
+	4400 3450 4700 3450
+Wire Wire Line
+	4300 3350 4300 3650
+Wire Wire Line
+	4400 3350 4400 3450
+$EndSCHEMATC

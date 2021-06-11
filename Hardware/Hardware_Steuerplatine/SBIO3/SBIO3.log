@@ -1,0 +1,40 @@
+STEP in Solid Edge konvertieren
+Datum: Dienstag,September 15,2020 08:47
+Quelldatei: C:\Users\Maximilian\OneDrive - BMK Group GmbH & Co. KG\Arbeit\Projekte\SBIO3\Hardware_Steuerplatine\SBIO3_Final_V2\SBIO3_003\SBIO3\SBIO3.step
+Autor: An Author
+Organisation: A Company
+Ausgangssystem: KiCad to STEP converter
+
+Hardware:
+Prozessor: Intel(R) Core(TM) i7-1065G7 CPU @ 1.30GHz
+Betriebssystem: Windows 10 Professional
+Installierter Speicher: 15.70 GB
+
+Software-Informationen
+Parasolid-Version: 31.1.255
+PSBodyShop-Version: 31.1.110
+Step-Adapterversion: 5.0.48
+Solid Edge-Version: 220.00.00.104 x64
+
+Step-Importoptionen
+Facettierte Körper importieren: Ein
+Prüfkörper importieren: Aus
+Kurven importieren: Ein
+DoNotSave importieren: Ein
+Mehrere Körper als Einzelteildatei importieren: Ein
+Flächenvernähung importieren: Ein
+Boolesche Körper importieren: Ein
+Basisformelement erstellen: Ein
+Geometrie vereinfachen: Ein
+Druckkurven importieren: Ein
+Führung importieren: C:
+Flächenvernähung importieren: Ein
+Flächen importieren: Ein
+Ausgabepfad importieren: C:\Users\Maximilian\OneDrive - BMK Group GmbH & Co. KG\Arbeit\Projekte\SBIO3\Hardware_Steuerplatine\SBIO3_Final_V2\SBIO3_003\SBIO3
+Aktivieren des standardmäßigen Ausgabepfads importieren: Ein
+PMI importieren: Aus
+Pfad importieren: 
+
+Übersetzen in Parasolid-Datentypen...
+Konvertierungsvorgang ist abgeschlossen
+Zur Übersetzung und Nachbearbeitung erforderte Gesamtzeit:00 : 00 : 09

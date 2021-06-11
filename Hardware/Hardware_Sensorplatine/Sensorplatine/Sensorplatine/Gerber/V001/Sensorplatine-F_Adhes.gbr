@@ -1,0 +1,22 @@
+G04 #@! TF.GenerationSoftware,KiCad,Pcbnew,(5.1.4)-1*
+G04 #@! TF.CreationDate,2020-11-15T15:34:35+01:00*
+G04 #@! TF.ProjectId,Sensorplatine,53656e73-6f72-4706-9c61-74696e652e6b,rev?*
+G04 #@! TF.SameCoordinates,Original*
+G04 #@! TF.FileFunction,Glue,Top*
+G04 #@! TF.FilePolarity,Positive*
+%FSLAX46Y46*%
+G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
+G04 Created by KiCad (PCBNEW (5.1.4)-1) date 2020-11-15 15:34:35*
+%MOMM*%
+%LPD*%
+G04 APERTURE LIST*
+%ADD10C,0.300000*%
+G04 APERTURE END LIST*
+D10*
+X183721428Y-90758571D02*
+X183721428Y-89258571D01*
+X183721428Y-89972857D02*
+X184578571Y-89972857D01*
+X184578571Y-90758571D02*
+X184578571Y-89258571D01*
+M02*
