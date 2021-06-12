@@ -4,12 +4,16 @@
  *	Created: 28.05.2021 12:58:39
  *  Author: Maximilian
  */ 
+#define F_CPU 16000000
+
 #include <stdio.h>
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <stdint.h>
 #include <string.h>
+#include <util/delay.h>
 #include "UART_Routine.h"
+#include "IO.h"
 
 
 void UART_RX_Handler(UART *UART0)
@@ -28,8 +32,9 @@ void UART_RX_Handler(UART *UART0)
 void RX_Taskhandler(UART *UART0)
 {
 	static uint8_t counter = 0;
-
 	
+	//_delay_ms(10000);
+	sei();
 	do
 	{
 		/**************************************************
@@ -37,22 +42,24 @@ void RX_Taskhandler(UART *UART0)
 		**************************************************/
 		if (UART0->RX_Task[TASK1])
 		{
-			printf("Hallo TASK1");
-			UART0->RX_Task[TASK1] = 0;
-			break;
+			printf("Hallo1");
+			_UART_break(TASK1);
 		}
 		/**************************************************
 		*				    TASK 2						  *
 		**************************************************/		
 		if (UART0->RX_Task[TASK2])
 		{
-			printf("Hallo TASK2");
-			UART0->RX_Task[TASK2] = 0;
-			break;
+			printf("Hallo2");
+			_UART_break(TASK2);
 		}
+			
+
 		counter++;
 		
 	}
 	while(counter <= (RX_Task_size - 1));
+	cli();
+	
 }
 

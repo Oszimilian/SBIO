@@ -11,25 +11,36 @@
 #include <avr/interrupt.h>
 #include <stdint.h>
 #include <string.h>
+#include <util/delay.h>
 
 
 #include "UART_Routine.h"
 #include "IO.h"
+#include "ADC_Routine.h"
+#include "Frontpanel.h"
 
 
 int main (void)
 {
-	//Init_GPIO(&PWM);
+	Init_GPIO(&PWM);
     UART_Init(&UART0);
+	Init_ADC(&ADW0);
 
 
     while(1)
     {
+		printf("\033\143");
+		printf("ADC: %1.4f A \r\n", (ADW0.ADC_Average[3] * 0.035) / 56);
+		
+		_delay_ms(1000);
+		
+		
+		for (uint8_t i = 0; i <= 15 ; i++) Write_Frontpanel(&Frontpanel, i, ON);
+		
+		Show_Frontpanel(&Frontpanel);
 
-    	//uint8_t i = Get_Input(&Input1_Port, Input1);
-		_DBG(ON)
-		printf("Hallo");
-
+		Start_ADC(&ADW0);
+		Calculate_ADC(&ADW0);
 		UART_RX_Handler(&UART0);
 		RX_Taskhandler(&UART0);
     }

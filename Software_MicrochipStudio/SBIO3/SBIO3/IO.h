@@ -62,9 +62,9 @@ PWM_Setting PWM;
 
 
 //Schieberegister
-#define Takt		4
+#define Latch		4
 #define Daten		5
-#define Latch		6
+#define Takt		6
 
 
 //Schirttmotor 1

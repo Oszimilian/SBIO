@@ -24,6 +24,7 @@ void Init_GPIO(PWM_Setting *PWM)
 	DDRA |= (1<<Lufter1);
 	DDRA |= (1<<Lufter2);
 	DDRB |= (1<<DBG);
+	DDRE |= (1<<DIR);
 
 	DDRC |= (1<<Rot1);
 	DDRC |= (1<<Grun1);

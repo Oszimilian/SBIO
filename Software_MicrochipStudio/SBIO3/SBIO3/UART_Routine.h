@@ -7,7 +7,7 @@
 
 #define FOSC 16000000
 #define BAUD 19200
-#define MYUBRR FOSC/16/BAUD-1
+#define MYUBRR ((FOSC/16/BAUD) - 1)
 
 
 
@@ -17,6 +17,8 @@
 
 #define TASK1 1
 #define TASK2 2
+
+#define _UART_break(x)	UART0->RX_Task[x] = 0;	break
 
 
 typedef struct
@@ -31,12 +33,13 @@ typedef struct
 }UART;
 UART UART0;
 
-void UART_RX_Handler(UART *UART0);
-void RX_Taskhandler(UART *UART0);
 
 void UART_Init(UART *UART_s);
+static int UART_TX(char c, FILE *stream);
+static FILE mystdout = FDEV_SETUP_STREAM(UART_TX, NULL, _FDEV_SETUP_WRITE);
 
-static int UART_TX(char c, FILE *stream);void UART_Init(UART *UART_s);
+void UART_RX_Handler(UART *UART0);
+void RX_Taskhandler(UART *UART0);
 
 
 
