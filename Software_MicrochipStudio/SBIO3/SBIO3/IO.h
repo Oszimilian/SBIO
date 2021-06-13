@@ -16,12 +16,14 @@
 #define PWM_Grun2		8
 #define PWM_Blau2		9
 
+
+
 typedef struct
 {
 
-	volatile uint8_t PWM_List[PWM_Anzahl];
 	volatile  uint8_t PWM_Enabel[PWM_Anzahl];
 	volatile uint8_t PWM_Wert[PWM_Anzahl];
+	volatile uint8_t SM_Flag;
 
 }PWM_Setting;
 PWM_Setting PWM;
@@ -120,6 +122,9 @@ PWM_Setting PWM;
 
 #define _DIR(x) 		if (x) PORTE |= (1<<DIR); 	  else PORTE &= ~(1<<DIR);
 
+//PWM_Makros
+#define _SET_PWM(y, x)	if (x >= 1){ PWM.PWM_Enabel[y] = ON; PWM.PWM_Wert[y] = x;} if (!x) PWM.PWM_Enabel[y] = OFF;
+
 
 //Schrittmotor 1 Schritt
 #define _SM1(x)		if (x==1) SM1_Schritt1 if (x==2) SM1_Schritt2 if (x==3) SM1_Schritt3 if (x==4) SM1_Schritt4
@@ -129,3 +134,4 @@ PWM_Setting PWM;
 
 
 void Init_GPIO(PWM_Setting *PWM);
+void Set_OutputPWM(uint8_t Zustand, uint8_t Pin, uint8_t Wert);

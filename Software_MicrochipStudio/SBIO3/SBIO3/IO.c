@@ -64,6 +64,8 @@ void Init_GPIO(PWM_Setting *PWM)
 	PORTB |= (1<<Start);
 	PORTE |= (1<<NotAus);
 	PORTB |= (1<<DBG1);
+	
+	PWM->SM_Flag = 0;
 }
 
 uint8_t Get_Input(uint8_t *Port, uint8_t Pin)
@@ -93,16 +95,16 @@ void PWM_Generator(PWM_Setting *PWM)
 	if (Counter == 255) Counter == 0;
 
 
-	if (PWM->PWM_Enabel[PWM_Pumpe]   == 1 &&  PWM->PWM_List[PWM_Pumpe]   == 1 && PWM->PWM_Wert[PWM_Pumpe] == Counter)   _Pumpe(ON);
-	if (PWM->PWM_Enabel[PWM_Heizung] == 1 &&  PWM->PWM_List[PWM_Heizung] == 1 && PWM->PWM_Wert[PWM_Heizung] == Counter) _Heizung(ON);
-	if (PWM->PWM_Enabel[PWM_Lufter1] == 1 &&  PWM->PWM_List[PWM_Lufter1] == 1 && PWM->PWM_Wert[PWM_Lufter1] == Counter) _Lufter1(ON)
-	if (PWM->PWM_Enabel[PWM_Lufter2] == 1 &&  PWM->PWM_List[PWM_Lufter2] == 1 && PWM->PWM_Wert[PWM_Lufter2] == Counter) _Lufter2(ON)
-	if (PWM->PWM_Enabel[PWM_Rot1]    == 1 &&  PWM->PWM_List[PWM_Rot1]    == 1 && PWM->PWM_Wert[PWM_Rot1] == Counter)    _Rot1(ON);
-	if (PWM->PWM_Enabel[PWM_Grun1]   == 1 &&  PWM->PWM_List[PWM_Grun1]   == 1 && PWM->PWM_Wert[PWM_Grun1] == Counter)   _Grun1(ON);
-	if (PWM->PWM_Enabel[PWM_Blau1]   == 1 &&  PWM->PWM_List[PWM_Blau1]   == 1 && PWM->PWM_Wert[PWM_Blau1] == Counter)   _Blau1(ON)
-	if (PWM->PWM_Enabel[PWM_Rot2]    == 1 &&  PWM->PWM_List[PWM_Rot2]    == 1 && PWM->PWM_Wert[PWM_Rot2] == Counter)    _Rot2(ON);
-	if (PWM->PWM_Enabel[PWM_Grun2]   == 1 &&  PWM->PWM_List[PWM_Grun2]   == 1 && PWM->PWM_Wert[PWM_Grun2] == Counter)   _Grun2(ON);
-	if (PWM->PWM_Enabel[PWM_Blau2]   == 1 &&  PWM->PWM_List[PWM_Blau2]   == 1 && PWM->PWM_Wert[PWM_Blau2] == Counter)   _Blau2(ON);
+	if (PWM->PWM_Enabel[PWM_Pumpe]   == 1 && PWM->PWM_Wert[PWM_Pumpe] == Counter)   _Pumpe(ON)
+	if (PWM->PWM_Enabel[PWM_Heizung] == 1 && PWM->PWM_Wert[PWM_Heizung] == Counter) _Heizung(ON)
+	if (PWM->PWM_Enabel[PWM_Lufter1] == 1 && PWM->PWM_Wert[PWM_Lufter1] == Counter) _Lufter1(ON)
+	if (PWM->PWM_Enabel[PWM_Lufter2] == 1 && PWM->PWM_Wert[PWM_Lufter2] == Counter) _Lufter2(ON)
+	if (PWM->PWM_Enabel[PWM_Rot1]    == 1 && PWM->PWM_Wert[PWM_Rot1] == Counter)    _Rot1(ON)
+	if (PWM->PWM_Enabel[PWM_Grun1]   == 1 && PWM->PWM_Wert[PWM_Grun1] == Counter)   _Grun1(ON)
+	if (PWM->PWM_Enabel[PWM_Blau1]   == 1 && PWM->PWM_Wert[PWM_Blau1] == Counter)   _Blau1(ON)
+	if (PWM->PWM_Enabel[PWM_Rot2]    == 1 && PWM->PWM_Wert[PWM_Rot2] == Counter)    _Rot2(ON)
+	if (PWM->PWM_Enabel[PWM_Grun2]   == 1 && PWM->PWM_Wert[PWM_Grun2] == Counter)   _Grun2(ON)
+	if (PWM->PWM_Enabel[PWM_Blau2]   == 1 && PWM->PWM_Wert[PWM_Blau2] == Counter)   _Blau2(ON)
 
 	if (Counter == 254)
 	{
@@ -116,8 +118,19 @@ void PWM_Generator(PWM_Setting *PWM)
 		_Rot2(OFF);
 		_Grun2(OFF);
 		_Blau2(OFF);
+
 	}
 
 	Counter++;
 }
 
+void Set_OutputPWM(uint8_t Zustand, uint8_t Pin, uint8_t Wert)
+{
+	if (Zustand)
+	{
+		PWM.PWM_Enabel[Pin] = ON;
+		PWM.PWM_Wert[Pin] = Wert;
+	}else{
+		PWM.PWM_Enabel[Pin] = OFF;
+	}
+}

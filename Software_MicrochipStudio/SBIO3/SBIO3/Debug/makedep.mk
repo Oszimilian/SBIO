@@ -10,6 +10,10 @@ IO.c
 
 main.c
 
+Terminal.c
+
+TWI.c
+
 UART_Routine.c
 
 UART_Routine_Handling.c

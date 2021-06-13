@@ -17,6 +17,7 @@
 
 #define TASK1 1
 #define TASK2 2
+#define TASK3 3
 
 #define _UART_break(x)	UART0->RX_Task[x] = 0;	break
 
