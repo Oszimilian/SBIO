@@ -1,5 +1,4 @@
-UART_Routine_Handling.d UART_Routine_Handling.o: \
- .././UART_Routine_Handling.c \
+Sub.d Sub.o: .././Sub.c \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdint.h \
@@ -19,7 +18,8 @@ UART_Routine_Handling.d UART_Routine_Handling.o: \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
- .././UART_Routine.h .././IO.h .././Sub.h
+ .././UART_Routine.h .././IO.h .././ADC_Routine.h .././Frontpanel.h \
+ .././TWI.h .././Terminal.h .././Sub.h
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h:
 
@@ -62,5 +62,13 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 .././UART_Routine.h:
 
 .././IO.h:
+
+.././ADC_Routine.h:
+
+.././Frontpanel.h:
+
+.././TWI.h:
+
+.././Terminal.h:
 
 .././Sub.h:

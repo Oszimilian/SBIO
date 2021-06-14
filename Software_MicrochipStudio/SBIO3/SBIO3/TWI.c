@@ -132,6 +132,7 @@ void Calculate_TWI(TWI_Settings *TWI)
 		TWI_Sum += TWI->HUMI_Val[i];
 	}
 	TWI->HUMI_Average = TWI_Sum / Mittelwerte;
+	TWI->HUMI_Average = ( (125 * TWI->HUMI_Average) / 65536) - 6;
 	TWI_Sum = 0;
 	
 	for (uint8_t i = 0; i <= (Mittelwerte-1); i++)
@@ -139,6 +140,7 @@ void Calculate_TWI(TWI_Settings *TWI)
 		TWI_Sum += TWI->TEMP_Val[i];
 	}
 	TWI->TEMP_Average = TWI_Sum / Mittelwerte;
+	TWI->TEMP_Average = ((175.72 * TWI->TEMP_Average) / 65536) -46.85;
 	TWI_Sum = 0;
 	
 	for (uint8_t i = 0; i <= (Mittelwerte-1); i++)

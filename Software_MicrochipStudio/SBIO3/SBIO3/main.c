@@ -1,3 +1,4 @@
+
 /*
  * UART_Routine.h
  * Inspired by Sparkfun
@@ -28,23 +29,21 @@ int main (void)
     UART_Init(&UART0);
 	Init_ADC(&ADW0);
 	TWI_Init(&TWI);
+	
+	char Test[] = "Hallo Terminal";
 
 
     while(1)
     {
 		
 
-		//Show_Terminal();
-printf("Buffer: ");
-//for (uint8_t i = 0; i <= 20; i++) printf("%c", UART0.RX_Buf[i]);
-printf( "%d %d", strncmp( UART0.RX_Buf, "{SET TEMP L TO: }", 3 ), UART0.RX_Global_Counter);
-printf("Wunsch: %s", "{SET TEMP L TO: }");
-printf("Len: %d Ende", strlen("{SET TEMP L TO: "));
+		Show_Terminal();
+
+	
 		_delay_ms(1000);
 		
 		
-		//for (uint8_t i = 0; i <= 15 ; i++) Write_Frontpanel(&Frontpanel, i, ON);
-		
+
 		_SET_PWM(PWM_Pumpe, 1);
 		_SET_PWM(PWM_Heizung, 1);
 		_SET_PWM(PWM_Lufter1, 1);
@@ -55,6 +54,10 @@ printf("Len: %d Ende", strlen("{SET TEMP L TO: "));
 		
 		Update_Frontpanel(&Frontpanel, &PWM);
 		Show_Frontpanel(&Frontpanel);
+		
+		I2C_GetLuminance();
+		I2c_GetHumi();
+		I2c_GetTemp();
 
 		Start_ADC(&ADW0);
 		Calculate_ADC(&ADW0);

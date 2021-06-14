@@ -10,7 +10,7 @@
 #define i2C_noACK			0
 #define i2C_ACK				1
 #define i2C_Adr_Hi			0x5C
-//#define i2C_Adr_Lo		0x23
+#define i2C_Adr_Lo		0x23
 #define i2C_Adr_Lo			0x23
 #define i2C_Humi			0xE5
 #define i2C_Temp			0xE3
@@ -25,9 +25,9 @@ typedef struct
 	volatile uint16_t TEMP_Val [Mittelwerte];
 	volatile uint16_t LUMI_Val [Mittelwerte];
 	
-	uint16_t HUMI_Average;
-	uint16_t TEMP_Average;
-	uint16_t LUMI_Average;
+	double HUMI_Average;
+	double TEMP_Average;
+	double LUMI_Average;
 	
 }TWI_Settings;
 TWI_Settings TWI;

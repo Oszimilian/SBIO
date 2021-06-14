@@ -1,16 +1,21 @@
 /*
  * Sub.h
  *
- * Created: 13.06.2021 14:44:36
- *  Author: Maximilian
+ * Created: 14.06.2021 14:18:32
+ *  Author: 107475
  */ 
 
-
-#ifndef SUB_H_
-#define SUB_H_
-
+#define H		1 
+#define L		2
 
 
-
-
-#endif /* SUB_H_ */
+typedef struct
+{
+	
+	uint16_t Temp[2];
+	uint16_t Lumi[2];
+	uint16_t Humi[2];
+	uint16_t GHum[2];
+		
+}Settings_Regelung;
+Settings_Regelung Physical_Border;

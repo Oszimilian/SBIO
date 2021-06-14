@@ -33,7 +33,7 @@ void Init_ADC (ADW *ADW0)
 	for (uint8_t i = 0; i <= (ADC_square - 1); i++)
 	{
 		 if (ADW0->ADC_Channellist[i]) ADW0->ADC_Val[i] = malloc(ADC_square * sizeof(uint16_t));
-		 if (ADW0->ADC_Val[i] == NULL) printf("ADC Spalte NULL \n");
+		 if (ADW0->ADC_Val[i] == NULL) printf("ADC Spalte: %d NULL \n", i);
 	}
 	
 	ADMUX = (1<<REFS0);

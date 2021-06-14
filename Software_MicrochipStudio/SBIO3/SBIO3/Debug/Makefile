@@ -41,6 +41,7 @@ C_SRCS +=  \
 ../Frontpanel.c \
 ../IO.c \
 ../main.c \
+../Sub.c \
 ../Terminal.c \
 ../TWI.c \
 ../UART_Routine.c \
@@ -58,6 +59,7 @@ ADC_Routine.o \
 Frontpanel.o \
 IO.o \
 main.o \
+Sub.o \
 Terminal.o \
 TWI.o \
 UART_Routine.o \
@@ -68,6 +70,7 @@ ADC_Routine.o \
 Frontpanel.o \
 IO.o \
 main.o \
+Sub.o \
 Terminal.o \
 TWI.o \
 UART_Routine.o \
@@ -78,6 +81,7 @@ ADC_Routine.d \
 Frontpanel.d \
 IO.d \
 main.d \
+Sub.d \
 Terminal.d \
 TWI.d \
 UART_Routine.d \
@@ -88,6 +92,7 @@ ADC_Routine.d \
 Frontpanel.d \
 IO.d \
 main.d \
+Sub.d \
 Terminal.d \
 TWI.d \
 UART_Routine.d \
@@ -129,6 +134,13 @@ LINKER_SCRIPT_DEP+=
 	
 
 ./main.o: .././main.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega64 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega64" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+./Sub.o: .././Sub.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\include"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega64 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega64" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

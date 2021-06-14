@@ -27,7 +27,7 @@ void Show_Terminal(void)
 	printf("Strom: %f \n", ADW0.ADC_Average[3]);
 	printf("Spannung: %f \n", ADW0.ADC_Average[2]);
 	printf("GNDHUMI: %f \n", (ADW0.ADC_Average[1] + ADW0.ADC_Average[0]) / 2 );
-	printf("HUMI: %d \n", TWI.HUMI_Average);
-	printf("TEMP: %d \n", TWI.TEMP_Average);
+	printf("HUMI: %3.1f \n", TWI.HUMI_Average);
+	printf("TEMP: %3.1f \n", TWI.TEMP_Average);
 	printf("LUMI: %d \n", TWI.LUMI_Average);
 }

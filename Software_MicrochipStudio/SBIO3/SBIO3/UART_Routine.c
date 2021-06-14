@@ -25,7 +25,7 @@ void UART_Init(UART *UART)
 {
 
 	//RXD-PIN als Eingang
-	//DDRD &= ~(1<<0);
+	DDRD &= ~(1<<0);
 
 	//USART Baud rate: 9600
 	UBRR0H = (MYUBRR >> 8);
@@ -37,8 +37,6 @@ void UART_Init(UART *UART)
 	stdout = &mystdout;
 	
 	UART->RX_Complete = 0;
-	
-	
 	
 	sei();
 }
@@ -56,7 +54,7 @@ static int UART_TX(char c, FILE *stream)
 	
 	UDR0 = c;
 	
-	_delay_us(150);
+	_delay_us(300);
 	
 	_DIR(OFF)
 
@@ -73,9 +71,10 @@ ISR(USART0_RX_vect)
 {
 	static uint8_t RX_Counter = 0;
 	
+	char local_RX = UDR0;
+	
 	if (!UART0.RX_Complete)
-	{
-		char local_RX = UDR0;
+	{	
 		
 		if (local_RX == '{') RX_Counter = 0;
 			

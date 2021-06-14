@@ -6,7 +6,7 @@
  */ 
 
 #define FOSC 16000000
-#define BAUD 19200
+#define BAUD 38400
 #define MYUBRR ((FOSC/16/BAUD) - 1)
 
 
@@ -15,9 +15,16 @@
 #define RX_Task_size 10
 
 
-#define TASK1 1
-#define TASK2 2
-#define TASK3 3
+#define TASK1			1
+#define TASK2			2
+#define SET_TEMP_L		3
+#define SET_TEMP_H		4
+#define SET_LUMI_L		5
+#define SET_LUMI_H		6
+#define SET_HUMI_L		7
+#define SET_HUMI_H		8
+#define SET_GHUM_L		9
+#define SET_GHUM_H		10
 
 #define _UART_break(x)	UART0->RX_Task[x] = 0;	break
 
