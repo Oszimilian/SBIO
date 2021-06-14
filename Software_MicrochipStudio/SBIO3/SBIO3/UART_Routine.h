@@ -5,8 +5,10 @@
  *  Author: Maximilian
  */ 
 
+
+
 #define FOSC 16000000
-#define BAUD 38400
+#define BAUD 76800
 #define MYUBRR ((FOSC/16/BAUD) - 1)
 
 
@@ -26,13 +28,13 @@
 #define SET_GHUM_L		9
 #define SET_GHUM_H		10
 
-#define _UART_break(x)	UART0->RX_Task[x] = 0;	break
+#define _UART_break(x)	UART0->RX_Task[x] = 0; Terminal.Terminal_En = 1; break
 
 
 typedef struct
 {
 	
-	volatile char RX_Buf[RX_Buffer_size];
+	volatile char RX_Buf[RX_Buffer_size]; 
 	volatile uint8_t RX_Complete;
 	volatile uint8_t RX_Global_Counter;
 	volatile uint8_t RX_Task[RX_Task_size];

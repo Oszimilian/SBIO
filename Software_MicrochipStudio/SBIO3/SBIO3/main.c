@@ -29,8 +29,7 @@ int main (void)
     UART_Init(&UART0);
 	Init_ADC(&ADW0);
 	TWI_Init(&TWI);
-	
-	char Test[] = "Hallo Terminal";
+	Init_Terminal(&Terminal);
 
 
     while(1)
@@ -39,8 +38,7 @@ int main (void)
 
 		Show_Terminal();
 
-	
-		_delay_ms(1000);
+
 		
 		
 

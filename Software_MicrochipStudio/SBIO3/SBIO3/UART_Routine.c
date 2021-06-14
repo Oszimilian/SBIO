@@ -54,7 +54,7 @@ static int UART_TX(char c, FILE *stream)
 	
 	UDR0 = c;
 	
-	_delay_us(300);
+	_delay_us(127);
 	
 	_DIR(OFF)
 
