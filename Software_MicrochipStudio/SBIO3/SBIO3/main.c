@@ -14,13 +14,13 @@
 #include <string.h>
 #include <util/delay.h>
 
-
+#include "Terminal.h"
 #include "UART_Routine.h"
 #include "IO.h"
 #include "ADC_Routine.h"
 #include "Frontpanel.h"
 #include "TWI.h"
-#include "Terminal.h"
+
 
 
 int main (void)
@@ -60,8 +60,9 @@ int main (void)
 		Start_ADC(&ADW0);
 		Calculate_ADC(&ADW0);
 		Calculate_TWI(&TWI);
-		UART_RX_Handler(&UART0);
-		RX_Taskhandler(&UART0);
+		
+		UART_RX_Handler(&UART0, &Terminal);
+		RX_Taskhandler(&UART0, &Terminal);
     }
 
     return(0);

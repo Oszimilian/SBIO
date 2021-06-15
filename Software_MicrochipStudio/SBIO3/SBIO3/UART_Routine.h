@@ -27,8 +27,9 @@
 #define SET_HUMI_H		8
 #define SET_GHUM_L		9
 #define SET_GHUM_H		10
+#define INFO			11
 
-#define _UART_break(x)	UART0->RX_Task[x] = 0; Terminal.Terminal_En = 1; break
+#define _UART_break(x)	UART0->RX_Task[x] = 0; Terminal->Terminal_En = 1; break
 
 
 typedef struct
@@ -48,8 +49,8 @@ void UART_Init(UART *UART_s);
 static int UART_TX(char c, FILE *stream);
 static FILE mystdout = FDEV_SETUP_STREAM(UART_TX, NULL, _FDEV_SETUP_WRITE);
 
-void UART_RX_Handler(UART *UART0);
-void RX_Taskhandler(UART *UART0);
+//void UART_RX_Handler(UART *UART0, Settings_Terminal *Terminal);
+//void RX_Taskhandler(UART *UART0);
 
 
 
