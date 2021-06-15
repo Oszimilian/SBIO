@@ -20,13 +20,13 @@ typedef struct
 	char CMD_SET_TEMPL[18];
 	char CMD_SET_TEMPH[18];
 	char CMD_SET_LUMIL[18];
-	char CMD_SET_LUMIH[18];	
+	char CMD_SET_LUMIH[18];
 	char CMD_SET_HUMIL[18];
 	char CMD_SET_HUMIH[18];
 	char CMD_SET_GHUML[18];
 	char CMD_SET_GHUMH[18];
 	
-	char CMD_INFO[10];
+	char CMD_INFO[15];
 	
 }Settings_Terminal;
 Settings_Terminal Terminal;

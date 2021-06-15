@@ -13,13 +13,19 @@
 #include <stdint.h>
 #include <string.h>
 #include <util/delay.h>
+#include <avr/eeprom.h>
 
+#include "main.h"
 #include "Terminal.h"
 #include "UART_Routine.h"
 #include "IO.h"
 #include "ADC_Routine.h"
 #include "Frontpanel.h"
 #include "TWI.h"
+#include "EEPROM.h"
+#include "Sub.h"
+
+
 
 
 
@@ -31,13 +37,17 @@ int main (void)
 	TWI_Init(&TWI);
 	Init_Terminal(&Terminal);
 
-
+	RST_Falshback();
+	
+	
     while(1)
     {
 		
 
 		Show_Terminal();
+		
 
+		
 
 		
 		

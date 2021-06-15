@@ -18,6 +18,7 @@
 #include "ADC_Routine.h"
 #include "Frontpanel.h"
 #include "TWI.h"
+#include "Sub.h"
 
 
 void Init_Terminal (Settings_Terminal *Terminal)
@@ -38,7 +39,7 @@ void Init_Terminal (Settings_Terminal *Terminal)
 	strcpy(Terminal->CMD_SET_GHUML, "{SET GHUM_L TO:}");
 	strcpy(Terminal->CMD_SET_GHUMH, "{SET GHUM_H TO:}");
 		
-	strcpy(Terminal->CMD_INFO, "{INFO}");
+	strcpy(Terminal->CMD_INFO, "{CMD_INFO}");
 	
 }
 
@@ -57,33 +58,41 @@ void Show_Terminal(void)
 		printf("| GNDHUMI:  %3.1f /                |\n", (((ADW0.ADC_Average[1] + ADW0.ADC_Average[0]) / 2) * 100) / 1024 );
 		printf("| HUMI:     %3.1f                  |\n", TWI.HUMI_Average);
 		printf("| TEMP:     %3.1f                  |\n", TWI.TEMP_Average);
-		printf("| LUMI:     %3.1d                   |\n", TWI.LUMI_Average);
+		printf("| LUMI:     %3.1f                   |\n", TWI.LUMI_Average);
 		printf("|---------------------------------|\n");
-		printf("\n");
-		printf("--(LAST-CMD)--> %s \n", Terminal.Last_CMD);
-		printf("\n");
-		if (!Terminal.Info_En) printf("--(CMD)--> ");
-		
-		Terminal.Terminal_En = 0;		
+		printf("| TEMP H/L   %2.0d C %2.0d C            |\n", Physical_Border.Temp[H], Physical_Border.Temp[L] );
+		printf("| LUMI H/L %3.0d lx %3.0d lx          |\n", Physical_Border.Lumi[H], Physical_Border.Lumi[L] );
+		printf("| HUMI H/L %3.0d pc %3.0d pc          |\n", Physical_Border.Humi[H], Physical_Border.Humi[L] );
+		printf("| GHUM H/L %3.0d pc %3.0d pc          |\n", Physical_Border.GHum[H], Physical_Border.GHum[L] );
+		printf("|---------------------------------|\n");			
 	}
 	
 	if (Terminal.Info_En)
 	{
-		printf("\n");
-		printf("==> %s \n", Terminal.CMD_TASK1);
-		printf("==> %s \n", Terminal.CMD_UPDATE);
-		printf("==> %s \n", Terminal.CMD_SET_TEMPL);
-		printf("==> %s \n", Terminal.CMD_SET_TEMPH);
-		printf("==> %s \n", Terminal.CMD_SET_LUMIL);
-		printf("==> %s \n", Terminal.CMD_SET_LUMIH);
-		printf("==> %s \n", Terminal.CMD_SET_HUMIL);
-		printf("==> %s \n", Terminal.CMD_SET_HUMIH);
-		printf("==> %s \n", Terminal.CMD_SET_GHUML);
-		printf("==> %s \n", Terminal.CMD_SET_GHUMH);
-		printf("\n");
-		printf("\n");
-		printf("--(CMD)--> ");	
+		printf("|==> %s                      |\n", Terminal.CMD_TASK1);
+		printf("|==> %s                     |\n", Terminal.CMD_UPDATE);
+		printf("|==> %s             |\n", Terminal.CMD_SET_TEMPL);
+		printf("|==> %s             |\n", Terminal.CMD_SET_TEMPH);
+		printf("|==> %s             |\n", Terminal.CMD_SET_LUMIL);
+		printf("|==> %s             |\n", Terminal.CMD_SET_LUMIH);
+		printf("|==> %s             |\n", Terminal.CMD_SET_HUMIL);
+		printf("|==> %s             |\n", Terminal.CMD_SET_HUMIH);
+		printf("|==> %s             |\n", Terminal.CMD_SET_GHUML);
+		printf("|==> %s             |\n", Terminal.CMD_SET_GHUMH);
+		printf("|==> %s                   |\n", Terminal.CMD_INFO);
+		printf("|---------------------------------|");
+
 		
 		Terminal.Info_En = 0;
+	}
+	
+	if (Terminal.Terminal_En)
+	{
+		printf("\n");
+		printf("--(LAST-CMD)--> %s \n", Terminal.Last_CMD);
+		printf("\n");
+		printf("--(CMD)--> ");
+		
+		Terminal.Terminal_En = 0;	
 	}
 }

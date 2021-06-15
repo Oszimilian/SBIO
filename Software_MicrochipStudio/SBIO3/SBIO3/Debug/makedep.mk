@@ -4,6 +4,8 @@
 
 ADC_Routine.c
 
+EEPROM.c
+
 Frontpanel.c
 
 IO.c

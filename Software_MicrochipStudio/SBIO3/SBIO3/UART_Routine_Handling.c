@@ -16,6 +16,7 @@
 #include "UART_Routine.h"
 #include "IO.h"
 #include "Sub.h"
+#include "EEPROM.h"
 
 
 void UART_RX_Handler(UART *UART0, Settings_Terminal *Terminal)
@@ -91,6 +92,8 @@ void RX_Taskhandler(UART *UART0, Settings_Terminal *Terminal)
 				
 			sprintf(Terminal->Last_CMD, "%s %d", ptr, Physical_Border.Temp[L]);
 			
+			Save_To_EEPROM(&Physical_Border.Temp[L]);
+			
 			_UART_break(SET_TEMP_L);
 		}
 		/**************************************************
@@ -107,6 +110,8 @@ void RX_Taskhandler(UART *UART0, Settings_Terminal *Terminal)
 			ptr = strtok(Terminal->CMD_SET_TEMPH, "{}");
 
 			sprintf(Terminal->Last_CMD, "%s %d", ptr, Physical_Border.Temp[H]);
+			
+			Save_To_EEPROM(&Physical_Border.Temp[H]);
 			
 			_UART_break(SET_TEMP_H);
 		}
@@ -125,6 +130,8 @@ void RX_Taskhandler(UART *UART0, Settings_Terminal *Terminal)
 
 			sprintf(Terminal->Last_CMD, "%s %d", ptr, Physical_Border.Lumi[L]);
 			
+			Save_To_EEPROM(&Physical_Border.Lumi[L]);
+			
 			_UART_break(SET_LUMI_L);
 		}
 		/**************************************************
@@ -141,6 +148,8 @@ void RX_Taskhandler(UART *UART0, Settings_Terminal *Terminal)
 			ptr = strtok(Terminal->CMD_SET_LUMIH, "{}");
 
 			sprintf(Terminal->Last_CMD, "%s %d", ptr, Physical_Border.Lumi[H]);
+			
+			Save_To_EEPROM(&Physical_Border.Lumi[H]);
 			
 			_UART_break(SET_LUMI_H);
 		}
@@ -159,6 +168,8 @@ void RX_Taskhandler(UART *UART0, Settings_Terminal *Terminal)
 
 			sprintf(Terminal->Last_CMD, "%s %d", ptr, Physical_Border.Humi[L]);
 			
+			Save_To_EEPROM(&Physical_Border.Humi[L]);
+			
 			_UART_break(SET_HUMI_L);
 		}
 		/**************************************************
@@ -175,6 +186,8 @@ void RX_Taskhandler(UART *UART0, Settings_Terminal *Terminal)
 			ptr = strtok(Terminal->CMD_SET_HUMIH, "{}");
 
 			sprintf(Terminal->Last_CMD, "%s %d", ptr, Physical_Border.Humi[H]);
+			
+			Save_To_EEPROM(&Physical_Border.Humi[H]);
 			
 			_UART_break(SET_HUMI_H);
 		}		
@@ -193,6 +206,8 @@ void RX_Taskhandler(UART *UART0, Settings_Terminal *Terminal)
 
 			sprintf(Terminal->Last_CMD, "%s %d", ptr, Physical_Border.GHum[L]);
 			
+			Save_To_EEPROM(&Physical_Border.GHum[L]);
+			
 			_UART_break(SET_GHUM_L);
 		}
 		/**************************************************
@@ -209,6 +224,8 @@ void RX_Taskhandler(UART *UART0, Settings_Terminal *Terminal)
 			ptr = strtok(Terminal->CMD_SET_GHUMH, "{}");
 
 			sprintf(Terminal->Last_CMD, "%s %d", ptr, Physical_Border.GHum[H]);
+			
+			Save_To_EEPROM(&Physical_Border.GHum[H]);
 			
 			_UART_break(SET_GHUM_H);
 		}

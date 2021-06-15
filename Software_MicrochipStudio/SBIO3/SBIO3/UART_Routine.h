@@ -14,7 +14,7 @@
 
 
 #define RX_Buffer_size 128
-#define RX_Task_size 10
+#define RX_Task_size 20
 
 
 #define TASK1			1
